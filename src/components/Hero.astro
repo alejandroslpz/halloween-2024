@@ -1,0 +1,24 @@
+---
+import Arrow from './Arrow.astro';
+---
+
+<section class="relative w-full h-screen overflow-hidden">
+  <div
+    class="absolute inset-0 h-full w-full bg-no-repeat bg-fixed bg-center md:bg-contain z-0"
+    style="
+        background-image: url('/images/halloween-hero.png');
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+        z-index: 0;
+      "
+  >
+  </div>
+
+  <h1
+    class="text-primary font-jolly text-6xl text-center pt-40 md:pt-48 relative z-10"
+  >
+    Especial de Halloween 2024
+  </h1>
+
+  <Arrow section="#horror-stories" />
+</section>

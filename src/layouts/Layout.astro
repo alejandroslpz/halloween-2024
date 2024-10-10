@@ -1,0 +1,72 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Especial de Halloween 2024. Explora historias de terror de desarrolladores."
+    />
+    <meta
+      name="keywords"
+      content="Halloween, historias de terror, programación, horror"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content="Especial de Halloween 2024. Explora historias de terror de desarrolladores."
+    />
+    <meta property="og:image" content="/images/halloween-hero.png" />
+    <meta property="og:url" content={Astro.url} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta
+      name="twitter:description"
+      content="Especial de Halloween 2024. Explora historias de terror de desarrolladores."
+    />
+    <meta name="twitter:image" content="/images/halloween-hero.png" />
+
+    <link rel="canonical" href={Astro.url} />
+  </head>
+  <body class="bg-purple min-h-screen flex flex-col justify-between">
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: 'Rubik';
+    src: url('/fonts/Rubik-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Jolly Lodger';
+    src: url('/fonts/JollyLodger-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
